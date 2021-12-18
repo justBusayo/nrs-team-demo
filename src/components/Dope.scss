@@ -40,7 +40,6 @@ body {
             height: 100%;
             width: 100%;
         }
-
     }
 
     .radioDetails {
@@ -158,6 +157,7 @@ body {
         --bs-gutter-x: .5em !important;
     }
 }
+
 @media only screen and (max-width: 1000px) {
     .CatStations {
         display: grid !important;
