@@ -6,6 +6,7 @@ import { Container, Row, Col} from "react-bootstrap";
 import Menu from "./Menu.js"
 import RadioBox from "./RadioBox.js"
 import RecentStationBox from "./RecentStationBox.js"
+import NowPlaying from "./NowPlaying.js";
 
 const Home = () => {
     return (
@@ -25,12 +26,25 @@ const Home = () => {
                     <span className="boxTitle">RECENT STATIONS</span>
                     <span className="more">More</span>
                 </div>
-                <Row className="rentStations">
+                {/* <Row className="rentStations">
+                    <Col> <RecentStationBox></RecentStationBox> </Col> */}
                     <Col> <RecentStationBox></RecentStationBox> </Col>
-                    <Col> <RecentStationBox></RecentStationBox> </Col>
-                    <Col> <RecentStationBox></RecentStationBox> </Col>
-                </Row>
+                    {/* <Col> <RecentStationBox></RecentStationBox> </Col>
+                </Row> */}
             </Container>
+            {/* for favorite Box */}
+            <Container style={{marginBottom:"5em"}}>
+                <div className="RadioBoxHeader">
+                    <span className="boxTitle">FAVORITES STATIONS</span>
+                    <span className="more">More</span>
+                </div>
+                <RadioBox></RadioBox>
+            </Container>
+
+            {/* Now Playing Section */}
+            {/* <div className="nowPlaying">
+                <NowPlaying></NowPlaying>
+            </div> */}
         </div>
     )
 }
