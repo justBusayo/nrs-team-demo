@@ -1,0 +1,167 @@
+
+body {
+    background: #FFFFFF !important;
+}
+//for Home page
+.RadioBoxHeader {
+    // display: flex;
+    margin-top: 2em;
+    margin-bottom: -1em;
+    padding: 0 2em 0 2em;
+
+   .boxTitle {
+       font-weight: bold;
+   }
+   .more {
+       float: right;
+       border-bottom: 1px solid #bdbbbb;
+       color: #bdbbbb;
+   }
+}
+
+//for radio box styling
+.station{
+    display: flex;
+    width: 100%;
+    height: 90px;
+    margin-top: 2em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    border-radius: 10px;
+    
+
+    .radioLogo {
+        width: 35%;
+        background-color: #EAEAEA;
+        border-radius: 10px 0 0 10px;
+        align-items: center;
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+
+    }
+
+    .radioDetails {
+        width: 70%;
+        display: grid;
+        align-items: center;
+
+      h1 {
+          font-size: 20px;
+          margin-top: .5em;
+      }
+      small {
+          font-weight: bold;
+          color: #cfcccc;;
+      }
+
+        audio {
+            margin-left: -2em;
+            background-color: inherit;
+            width: 30%;
+        }
+    }
+
+    .favoriteIcon {
+        align-items: center;
+        text-align: center;
+        margin-top: 35px;
+        padding-right: .5em;
+        font-size: 25px;
+        cursor: pointer;
+        color: gainsboro;
+    }
+}
+.rhap_container {
+    height: 5px;
+    width: 10%;
+    box-shadow: 0 0 0 0 rgb(0 0 0 / 0%) !important;
+}
+.rhap_stacked .rhap_controls-section {
+    margin-top: -50px !important;
+    margin-left: -35px !important;
+}
+
+// for recent stations section
+.recentBox {
+    margin-top: 2em;
+
+    .recentRadioLogo {
+        width: 100%;
+        height: 100px;
+        background-color: #EAEAEA;
+        border-radius: 10px 0 0 10px;
+        align-items: center;
+        border-radius: 10px 10px 0 0;
+
+        img {
+            width: 100%;
+            height: inherit;
+        }
+    }
+
+    .moreIcon {
+
+        .ellipsis {
+            float: right;
+        }
+    }
+}
+
+// filters css
+.filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+    font-size: 1.2rem;
+    width: 100%;
+
+    span {
+        margin: 0.25em;
+        border: 1px solid #bdbbbb;;
+        border-radius: 10px;
+        padding: 0.25em 0.75em;
+
+        &:hover{
+            cursor: pointer;
+            background: linear-gradient(to bottom right, #bdbbbb, #918f8f);
+        }
+    }
+    .selected {
+        background: linear-gradient(to bottom right, #bdbbbb, #918f8f);
+    }
+}
+
+// Catrgory
+.radio{
+    .radio {
+        max-width: 60em;
+        width: 100%;
+    }
+
+    .stations {
+        display: grid;
+        grid-template-columns: repeat(3, 30%);
+        // padding: 1em;
+        
+        .station {
+            font-size: 1.2em;
+            margin: 0.25em;
+        }
+    }
+}
+@media only screen and (max-width: 500px) {
+    .row {
+        --bs-gutter-x: .5em !important;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .CatStations {
+        display: grid !important;
+        grid-template-columns: repeat(2, 50%) !important;
+        font-size: 10px;
+    }
+}
