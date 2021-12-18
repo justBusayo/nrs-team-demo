@@ -6,12 +6,14 @@ import { Container, Row, Col} from "react-bootstrap";
 import Menu from "./Menu.js"
 import RadioBox from "./RadioBox.js"
 import RecentStationBox from "./RecentStationBox.js"
-import NowPlaying from "./NowPlaying.js";
-
+import SearchBox from "./SearchBox.js";
 const Home = () => {
     return (
         <div>
             <Menu></Menu>
+            <Container style={{marginTop:"1.5em"}}>
+                <SearchBox></SearchBox>
+            </Container>
             {/* for popular section */}
             <Container>
                 <div className="RadioBoxHeader">
@@ -23,7 +25,7 @@ const Home = () => {
             {/* for recent stations */}
             <Container>
                 <div className="RadioBoxHeader">
-                    <span className="boxTitle">RECENT STATIONS</span>
+                    <span className="boxTitle">CATEGORIES</span>
                     <span className="more">More</span>
                 </div>
                 {/* <Row className="rentStations">
