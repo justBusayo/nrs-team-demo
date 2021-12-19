@@ -71,7 +71,6 @@ const Categories = ()=> {
                             </div>
                             <div className="radioDetails">
                                 <div className="name"><h1>{station.name}</h1></div>
-                                {/* <small>{station.country}</small> */}
                                 <AudioPlayer className="player"  
                                 src={station.urlResolved} showJumpControls={false} layout="stacked"
                                 customProgressBarSection={[]} customControlsSection={["MAIN_CONTROLS"]} //"VOLUME_CONTROLS"
