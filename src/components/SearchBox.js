@@ -7,7 +7,7 @@ const SearchBox = () => {
         <FormControl
           type="search"
           placeholder="Search"
-          className="me-2"
+          className="me-2 search"
           aria-label="Search"
         />
       </Form>

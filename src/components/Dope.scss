@@ -195,6 +195,9 @@ body {
     }
 }
 
+.form-control {
+    width: 60% important;
+}
 @media only screen and (max-width: 500px) {
     .row {
         --bs-gutter-x: .5em !important;
