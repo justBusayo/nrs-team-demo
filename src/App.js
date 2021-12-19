@@ -21,6 +21,8 @@ function App() {
           <Stations /> */}
           <Route path="/" element={<Home />}></Route>
           <Route path="/stations" exact element={<Stations />}></Route>
+          <Route path="/category" exact element={<Categories />}></Route>
+
         </Routes>
       </Router>
     </div>

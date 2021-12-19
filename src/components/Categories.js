@@ -50,9 +50,8 @@ const Categories = ()=> {
 
     return (
         <div className="radio">
-            <Menu></Menu>
 
-            <Container className="filters">
+            <div className="filters">
                 {filters.map((filter) => {
                     return (
                         <span 
@@ -60,9 +59,9 @@ const Categories = ()=> {
                         </span>
                     )
                 })}
-            </Container>
+            </div>
 
-            <Container className="stations CatStations">
+            <div className="stations CatStations">
                 {stations && stations.map((station, index) => {
                     return (
                         <div className="station catRadio" key={index}>
@@ -84,7 +83,7 @@ const Categories = ()=> {
                         </div>
                     );
                 })}
-            </Container>
+            </div>
         </div>
     )
 }
