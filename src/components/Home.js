@@ -36,7 +36,7 @@ const Home = () => {
             {/* for favorite Box */}
             <Container style={{marginBottom:"5em"}}>
                 <div className="RadioBoxHeader">
-                    <span className="boxTitle">FAVORITES STATIONS</span>
+                    <span className="boxTitle">MORE STATIONS</span>
                     <span className="more">More</span>
                 </div>
                 <RadioBox></RadioBox>

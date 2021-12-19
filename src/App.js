@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <h1>Nigeria Radio Station</h1>
-      <p>Providing radio stations from Nigeria to everyone in the world!</p>
+      <p className="siteMotto">Providing radio stations from Nigeria to everyone in the world!</p>
       <Menu />
       <Router>
         <Routes>

@@ -2,20 +2,27 @@
 body {
     background: #FFFFFF !important;
 }
+// site info
+.siteMotto {
+    font-family: cursive;
+    color: gray;
+}
 //for Home page
 .RadioBoxHeader {
     // display: flex;
     margin-top: 2em;
-    margin-bottom: -1em;
-    padding: 0 2em 0 2em;
+    margin-bottom: 2em;
+    padding: 1em .5em 1em .5em;
 
    .boxTitle {
        font-weight: bold;
+       float: left;
    }
    .more {
        float: right;
        border-bottom: 1px solid #bdbbbb;
        color: #bdbbbb;
+       cursor: pointer;
    }
 }
 
@@ -206,8 +213,12 @@ body {
 }
 
 .form-control {
-    width: 60% important;
+    display: block;
+    width: 80% !important;
+    margin-left: 2.7em;
 }
+
+
 @media only screen and (max-width: 500px) {
     .row {
         --bs-gutter-x: .5em !important;
@@ -220,5 +231,11 @@ body {
         display: grid !important;
         grid-template-columns: repeat(2, 50%) !important;
         font-size: 10px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .navbar-expand-lg .navbar-collapse {
+        margin-left: 5em;
     }
 }
