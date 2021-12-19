@@ -152,6 +152,49 @@ body {
         }
     }
 }
+
+// Now playing
+.nowPlaying {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #D4D4D4;
+
+    .playing {
+        display: grid;
+        grid-template-columns: repeat(3, 30%);
+        align-items: center;
+        // justify-content: center;
+
+        .playingLogo {
+            background-color: #FFFFFF;
+            margin: 1.5em;
+            box-shadow: 0 0 0 0 rgb(0 0 0 / 0%) !important;
+            height: 100px;
+            width: 100px;
+
+            img {
+                height: inherit;
+                width: inherit;
+            }
+        }
+        .stationName {
+            font-weight: bold;
+            font-family: cursive;
+            justify-content: center;
+
+        }
+        .playingStation {
+            float: right;
+            padding-top: 3em;
+
+            .rhap_container {
+                background-color: #D4D4D4 !important;
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 500px) {
     .row {
         --bs-gutter-x: .5em !important;
