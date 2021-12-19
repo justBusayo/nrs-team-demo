@@ -20,7 +20,7 @@ const Home = () => {
                     <span className="boxTitle">POPULAR STATIONS</span>
                     <span className="more">More</span>
                 </div>
-                <RadioBox></RadioBox>
+                <RadioBox />
             </Container>
             {/* for recent stations */}
             <Container>
