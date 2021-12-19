@@ -10,7 +10,6 @@ import SearchBox from "./SearchBox.js";
 const Home = () => {
     return (
         <div>
-            <Menu></Menu>
             <Container style={{marginTop:"1.5em"}}>
                 <SearchBox></SearchBox>
             </Container>
