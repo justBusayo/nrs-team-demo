@@ -1,236 +1,257 @@
-@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Open+Sans:wght@300&family=PT+Sans+Caption&family=Poppins:wght@200&family=Qahiri&family=Zen+Antique+Soft&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Open+Sans:wght@300&family=PT+Sans+Caption&family=Poppins:wght@200&family=Qahiri&family=Zen+Antique+Soft&display=swap');
 body {
-  background: #ffffff !important;
+    background: #FFFFFF !important;
 }
 // site info
+.siteName {
+  margin-top: 1.5em;
+  color: #494848;
+}
 .siteMotto {
-  font-family: cursive;
-  color: gray;
+    font-family: cursive;
+    color: gray;
 }
 //for Home page
 .RadioBoxHeader {
-  // display: flex;
-  margin-top: 2em;
-  margin-bottom: 2em;
-  padding: 1em 0.5em 1em 0.5em;
+    // display: flex;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding: 1em .5em 1em .5em;
 
-  .boxTitle {
-    font-weight: bold;
-    float: left;
-  }
-  .more {
-    float: right;
-    border-bottom: 1px solid #bdbbbb;
-    color: #bdbbbb;
-    cursor: pointer;
-  }
+   .boxTitle {
+       font-weight: bold;
+       float: left;
+   }
+   .more {
+       float: right;
+       border-bottom: 1px solid #bdbbbb;
+       color: #bdbbbb;
+       cursor: pointer;
+   }
 }
 
 //for radio box styling
-.station {
-  display: flex;
-  width: 100%;
-  height: 90px;
-  margin-top: 2em;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
-  text-align: center;
-  border-radius: 10px;
-
-  .radioLogo {
-    width: 35%;
-    background-color: #eaeaea;
-    border-radius: 10px 0 0 10px;
-    align-items: center;
-
-    img {
-      height: 100%;
-      width: 100%;
-    }
-  }
-
-  .radioDetails {
-    width: 70%;
-    display: grid;
-    align-items: center;
-
-    h1 {
-      font-size: 20px;
-      margin-top: 0.5em;
-    }
-    small {
-      font-weight: bold;
-      color: #cfcccc;
-    }
-
-    audio {
-      margin-left: -2em;
-      background-color: inherit;
-      width: 30%;
-    }
-  }
-
-  .favoriteIcon {
-    align-items: center;
+.station{
+    display: flex;
+    width: 100%;
+    height: 90px;
+    margin-top: 2em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
-    margin-top: 35px;
-    padding-right: 0.5em;
-    font-size: 25px;
-    cursor: pointer;
-    color: gainsboro;
-  }
+    border-radius: 10px;
+    
+
+    .radioLogo {
+        width: 35%;
+        background-color: #EAEAEA;
+        border-radius: 10px 0 0 10px;
+        align-items: center;
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .radioDetails {
+        width: 70%;
+        display: grid;
+        align-items: center;
+
+      h1 {
+          font-size: 20px;
+          margin-top: .5em;
+      }
+      small {
+          font-weight: bold;
+          color: #cfcccc;;
+      }
+
+        audio {
+            margin-left: -2em;
+            background-color: inherit;
+            width: 30%;
+        }
+    }
+
+    .favoriteIcon {
+        align-items: center;
+        text-align: center;
+        margin-top: 35px;
+        padding-right: .5em;
+        font-size: 25px;
+        cursor: pointer;
+        color: gainsboro;
+    }
+
+    .liked {
+        color: red;
+    }
 }
 .rhap_container {
-  height: 5px;
-  width: 10%;
-  box-shadow: 0 0 0 0 rgb(0 0 0 / 0%) !important;
+    height: 5px;
+    width: 10%;
+    box-shadow: 0 0 0 0 rgb(0 0 0 / 0%) !important;
 }
-
 .rhap_stacked .rhap_controls-section {
-  margin-top: -50px !important;
-  margin-left: -35px !important;
+    margin-top: -50px !important;
+    margin-left: -35px !important;
 }
 
 // for recent stations section
 .recentBox {
-  margin-top: 2em;
+    margin-top: 2em;
 
-  .recentRadioLogo {
-    width: 100%;
-    height: 100px;
-    background-color: #eaeaea;
-    border-radius: 10px 0 0 10px;
-    align-items: center;
-    border-radius: 10px 10px 0 0;
+    .recentRadioLogo {
+        width: 100%;
+        height: 100px;
+        background-color: #EAEAEA;
+        border-radius: 10px 0 0 10px;
+        align-items: center;
+        border-radius: 10px 10px 0 0;
 
-    img {
-      width: 100%;
-      height: inherit;
+        img {
+            width: 100%;
+            height: inherit;
+        }
     }
-  }
 
-  .moreIcon {
-    .ellipsis {
-      float: right;
+    .moreIcon {
+
+        .ellipsis {
+            float: right;
+        }
     }
-  }
 }
 
 // filters css
 .filters {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 1.5em 0 1.5em 0;
-  font-size: 1.2rem;
-  width: 100%;
-  text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1.5em 0 1.5em 0;
+    font-size: 1.2rem;
+    width: 100%;
 
-  span {
-    margin: 0.25em;
-    border: 1px solid #bdbbbb;
-    border-radius: 10px;
-    padding: 0.25em 0.75em;
+    span {
+        margin: 0.25em;
+        border: 1px solid #bdbbbb;;
+        border-radius: 10px;
+        padding: 0.25em 0.75em;
 
-    &:hover {
-      cursor: pointer;
-      background: linear-gradient(to bottom right, #bdbbbb, #918f8f);
+        &:hover{
+            cursor: pointer;
+            background: linear-gradient(to bottom right, #bdbbbb, #918f8f);
+        }
     }
-  }
-  .selected {
-    background: linear-gradient(to bottom right, #bdbbbb, #918f8f);
-  }
+    .selected {
+        background: linear-gradient(to bottom right, #bdbbbb, #918f8f);
+    }
 }
 
 // Catrgory
-.radio {
-  .radio {
-    // max-width: 60em;
-    width: 100%;
-    align-items: center;
-  }
+.radio{
+    .radio {
+        // max-width: 60em;
+        width: 100%;
+        align-items: center;
 
-  .CatStations {
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-    padding-left: 1em;
-
-    .station {
-      font-size: 1.2em;
-      width: 94%;
-      margin-top: 1em;
-      .radioDetails {
-        h1 {
-          font-size: 15px;
-          font-family: "Roboto", sans-serif;
-        }
-      }
     }
-  }
+
+    .CatStations {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        padding-left: 1em;
+
+        .station {
+            font-size: 1.2em;
+            width: 94%;
+            margin-top: 1em;
+            .radioDetails {
+                h1 {
+                    font-size: 15px;
+                    font-family: 'Roboto', sans-serif;
+
+                }
+            }
+        }
+    }
 }
 
 // Now playing
-.nowPlaying {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #d4d4d4;
+// .NowPlaying {
+//     width: inherit;
+//     background-color: black;
+//     justify-items: center;
+//     text-align: center;
+//     color: white;
+//     box-shadow: 0 6px 10px 0 #242323, 0 5px 10px 0 #2e2d2d;
+//     border-radius: 2%;
 
-  .playing {
-    display: grid;
-    grid-template-columns: repeat(3, 30%);
-    align-items: center;
-    // justify-content: center;
-
-    .playingLogo {
-      background-color: #ffffff;
-      margin: 1.5em;
-      box-shadow: 0 0 0 0 rgb(0 0 0 / 0%) !important;
-      height: 100px;
-      width: 100px;
-
-      img {
-        height: inherit;
-        width: inherit;
-      }
-    }
-    .stationName {
-      font-weight: bold;
-      font-family: cursive;
-      justify-content: center;
-    }
-    .playingStation {
-      float: right;
-      padding-top: 3em;
-
-      .rhap_container {
-        background-color: #d4d4d4 !important;
-      }
-    }
-  }
-}
+//     .nowDetails {
+//         margin: 0 2em 0 2em;
+//         p{
+//             font-size: 30px;
+//             font-weight: bold;
+//             font-family: cursive;
+//             margin: 0 2em .5em 2em;
+//             box-shadow: 0 1px 2px 0 green, 0 5px 10px 0 #EAEAEA;
+//         }
+//         span {
+//             font-size: 15px;
+//             color: grey;
+//             font-weight: bold;
+//             font-family: 'Courier New', Courier, monospace;
+//         }
+//     }
+//     .equalizer {
+//         width: auto;
+//         img {
+//             width: 65%;
+//             height: 40vh;
+//         }
+//     }
+//     .radioImg {
+//         img {
+//             // height: 100px;
+//             width: 35%;
+//             margin-top: 2em;
+//             border-radius: 4%;
+//         }
+//     }
+//     .nowRadio {
+//         width: 80%;
+//         margin: 4em;
+//         .player {
+//             background-color: black;
+//         }
+//     }
+// }
 
 .form-control {
-  display: block;
-  width: 80% !important;
-  margin-left: 2.7em;
+    display: block;
+    width: 80% !important;
+    margin-left: 2.7em;
 }
 
+
 @media only screen and (max-width: 500px) {
-  .row {
-    --bs-gutter-x: 0.5em !important;
-  }
+    .row {
+        --bs-gutter-x: .5em !important;
+    }
+    
 }
 
 @media only screen and (max-width: 1000px) {
-  .CatStations {
-    display: grid !important;
-    grid-template-columns: repeat(2, 50%) !important;
-    font-size: 10px;
-  }
+    .CatStations {
+        display: grid !important;
+        grid-template-columns: repeat(2, 50%) !important;
+        font-size: 10px;
+    }
 }
 
 @media only screen and (min-width: 992px) {
-  .navbar-expand-lg .navbar-collapse {
-    margin-left: 5em;
-  }
+    .navbar-expand-lg .navbar-collapse {
+        margin-left: 5em;
+    }
 }

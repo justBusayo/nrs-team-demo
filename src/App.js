@@ -12,7 +12,7 @@ import Menu from './components/Menu';
 function App() {
   return (
     <div className="App">
-      <h1>Nigeria Radio Station</h1>
+      <h3 className="siteName">Nigeria Radio Station</h3>
       <p className="siteMotto">Providing radio stations from Nigeria to everyone in the world!</p>
       <Menu />
       <Router>
