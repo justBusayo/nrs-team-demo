@@ -11,13 +11,21 @@ import SearchBoxProp from "./SearchBoxProp.js";
 
 
 const Stations = () => {
-
-    console.log(JSON.parse(localStorage.getItem("FavPkts")));
+    
+    
+    
     const setDefaultSrc = (event) => {
         event.target.src = defaultImage;
-
     }
-    const [favStore, setFavStore] = useState(JSON.parse(localStorage.getItem("FavPkts")))
+
+    const FavCheck = JSON.parse(localStorage.getItem("Favourites"));
+    const [favStore, setFavStore] = useState(JSON.parse(localStorage.getItem("FavPkts")));
+
+    if(!FavCheck || !favStore) {
+        localStorage.setItem("FavPkts",JSON.stringify([]))
+        localStorage.setItem("Favourites",JSON.stringify([]))
+    }
+
     console.log(favStore);
     useEffect(() => {
         setFavStore(JSON.parse(localStorage.getItem("FavPkts")))
@@ -37,7 +45,6 @@ const Stations = () => {
       const [stationNamesArray, setStationNamesArray] = useState()
 
     //   global fav
-    const FavCheck = JSON.parse(localStorage.getItem("Favourites"));
       
 
     const checkFav = (name) => {
@@ -76,7 +83,7 @@ const Stations = () => {
         }
     }
 
-    console.log(!favStore.length > 0);
+    // console.log(!favStore.length > 0);
     return (
         <Container>
             <Container style={{marginTop:"1.5em"}}>
@@ -120,6 +127,7 @@ const Stations = () => {
                                 </div>
                             )
                     })
+                    || true && <div></div>
                 }
 
 
