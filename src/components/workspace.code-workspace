@@ -1,0 +1,16 @@
+{
+  "folders": [
+	{
+		"path": "..\\..\\..\\..\\..\\Documents\\NRS Radio"
+	},
+	{
+		"path": "..\\..\\..\\..\\..\\Documents\\nrs-team-demo"
+	},
+	{
+		"path": "..\\..\\.."
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "Angular"
+  }
+}

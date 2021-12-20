@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import { RadioBrowserApi } from "radio-browser-api";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
-import defaultImage from "../images/radio.png"
+import defaultImage from "../images/logo.jpg";
 import userEvent from "@testing-library/user-event"
 import { Container} from "react-bootstrap"; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -12,7 +12,7 @@ import SearchBoxProp from "./SearchBoxProp.js";
 
 const Categories = ()=> {
     const [stations, setStations] = useState();
-    const [stationFilter, setStationFilter] = useState("all");
+    const [stationFilter, setStationFilter] = useState("");
 
     useEffect(() => {
         setUpApi(stationFilter).then((data) => {
@@ -21,28 +21,34 @@ const Categories = ()=> {
     }, [stationFilter]);
 
     const setUpApi = async (stationFilter) => {
-        const api = new RadioBrowserApi(fetch.bind(window), 'My Radio App');
+        const api = new RadioBrowserApi(fetch.bind(window), 'NRS APP');
 
         const stations = await api.searchStations({
-            language: "english",
+            countryCode: 'NG',
+            limit: 25, 
+            offset: 0,
             tag: stationFilter,
-            limit: 30
         });
         return stations;
     }
 
     const filters = [
-        "all",
+        
         "classical",
-        "country",
-        "dance",
-        "disco",
-        "house",
-        "jazz",
-        "pop",
-        "rap",
-        "retro",
-        "rock"
+        "afrobeats",
+        "christian",
+        "gospel",
+        "family",
+        "farming",
+        "news",
+        "talk",
+        "music",
+        "rock",
+        "relationship",
+        "business program",
+        "frcn",
+        "bostneer"
+    
     ]
 
     const setDefaultSrc = (event) => {
@@ -127,7 +133,9 @@ const Categories = ()=> {
                                 <img className="logo" src={station.favicon} alt="Logo" onError={setDefaultSrc}/>
                             </div>
                             <div className="radioDetails">
-                                <div className="name"><h1>{station.name}</h1></div>
+                                <div className="name"><h1>{station.name}</h1> 
+                               
+                                </div>
                                 {/* <small>{station.country}</small> */}
                                 <AudioPlayer className="player"  
                                 src={station.urlResolved} showJumpControls={false} layout="stacked"
