@@ -1,12 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-<<<<<<< HEAD
 import defaultImage from "../images/radio.png"
 import { Container} from "react-bootstrap";
-=======
-import defaultImage from "../images/logo.jpg"
-import { Container } from "react-bootstrap";
->>>>>>> 55c965721e2ec39cc1fabea0e8a0cf89440306df
 import { RadioBrowserApi } from "radio-browser-api";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
