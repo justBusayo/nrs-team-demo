@@ -14,7 +14,6 @@ const Menu = () => {
                         <Nav.Link  href="/">HOME</Nav.Link>
                         <Nav.Link href="/stations">STATIONS</Nav.Link>
                         <Nav.Link href="/category">CATEGORIES</Nav.Link>
-                        {/* <Nav.Link to="#link"></Nav.Link> */}
                         <Nav.Link  href="/favourites">FAVORITES</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
