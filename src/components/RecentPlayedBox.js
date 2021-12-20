@@ -16,73 +16,52 @@ const RecentPlayedBox = () => {
 
     }
 
-    const [stations, setStations] = useState();
-
-    useEffect(() => {
-        setupApi(5).then((data) => {
-            setStations(data);
-        })
-    }, []);
-
-    const setupApi = async (limit) => {
-        const api = new RadioBrowserApi(fetch.bind(window), "Nigeria Radio");
-        console.log(api)
-        const stations = await api.searchStations({
-            // language: "english",
-            limit: limit,
-            countryCode: 'NG'
-
-        });
-        return stations;
-    }
-
-    // fav logic
-    const radioIndexedNames = (stations) => {
-        let indexedData = [];
-        stations.forEach((station) => {
-            // let index = stationNamesArray.findIndex((obj, index) => obj.name == data.id)
-            let pushObj = {name: station.name.toLowerCase()};
-            indexedData.unshift(pushObj);
-        });
-        return indexedData;
-      }
+    const [recent , setRecent] = useState(JSON.parse(localStorage.getItem("Recent")))
     
-      const [stationNamesArray, setStationNamesArray] = useState()
+    useEffect(() => {
+        setRecent(JSON.parse(localStorage.getItem("Recent")))
+    }, [])
 
-    //   global fav
-    const FavCheck = JSON.parse(localStorage.getItem("Favourites"));
-      
-// clear test
-    //   localStorage.removeItem("Favourites")
-    //   localStorage.removeItem("FavPkts")
+// fav logic
+const radioIndexedNames = (stations) => {
+    let indexedData = [];
+    stations.forEach((station) => {
+        // let index = stationNamesArray.findIndex((obj, index) => obj.name == data.id)
+        let pushObj = {name: station.name.toLowerCase()};
+        indexedData.unshift(pushObj);
+    });
+    return indexedData;
+  }
 
+  const [stationNamesArray, setStationNamesArray] = useState()
+
+//   global fav
+const FavCheck = JSON.parse(localStorage.getItem("Favourites"));
    
 
-
-
-      const setFav = (name, obj) => {
-        setStationNamesArray(radioIndexedNames(stations))
-        // console.log(stationNamesArray);
-        let prevFav = JSON.parse(localStorage.getItem("Favourites")) || []
-        let prevFavPkts = JSON.parse(localStorage.getItem("FavPkts")) || []
-        
-        // console.log(localStorage.getItem("Favourites"));
-        if(prevFav.includes(name.toLowerCase())){
-        let index = prevFav.indexOf(name.toLowerCase())
-        prevFav.splice(index, 1);
-        prevFavPkts.splice(index, 1);
-        let newFav = [...prevFav];
-        let newFavPkts = [...prevFavPkts];
-        localStorage.setItem("Favourites",JSON.stringify(newFav))
-        localStorage.setItem("FavPkts",JSON.stringify(newFavPkts))
-        }
-        else {
-            let newFav = [...prevFav, name.toLowerCase()];
-            let newFavPkts = [...prevFavPkts, obj];
-            localStorage.setItem("FavPkts",JSON.stringify(newFavPkts))
-            localStorage.setItem("Favourites",JSON.stringify(newFav))
-        }
+const setFav = (name, obj) => {
+    setStationNamesArray(radioIndexedNames(recent))
+    // console.log(stationNamesArray);
+    let prevFav = JSON.parse(localStorage.getItem("Favourites")) || []
+    let prevFavPkts = JSON.parse(localStorage.getItem("FavPkts")) || []
+    
+    // console.log(localStorage.getItem("Favourites"));
+    if(prevFav.includes(name.toLowerCase())){
+    let index = prevFav.indexOf(name.toLowerCase())
+    prevFav.splice(index, 1);
+    prevFavPkts.splice(index, 1);
+    let newFav = [...prevFav];
+    let newFavPkts = [...prevFavPkts];
+    localStorage.setItem("Favourites",JSON.stringify(newFav))
+    localStorage.setItem("FavPkts",JSON.stringify(newFavPkts))
     }
+    else {
+        let newFav = [...prevFav, name.toLowerCase()];
+        let newFavPkts = [...prevFavPkts, obj];
+        localStorage.setItem("FavPkts",JSON.stringify(newFavPkts))
+        localStorage.setItem("Favourites",JSON.stringify(newFav))
+    }
+}
 
 
 
@@ -90,7 +69,7 @@ const RecentPlayedBox = () => {
         <Container>
             <div className="stations">
                 <div>
-                    {stations && stations.map((station, index) => {
+                    {recent && recent.map((station, index) => {
 
 
                         return (
@@ -128,6 +107,13 @@ const RecentPlayedBox = () => {
                             </div>
                         )
                     })}
+
+                    {/* { !JSON.parse(localStorage.getItem("Recent")).length > 0 && <div>< br /> < br /> < br />No saved favourites </div>
+                    } */}
+
+                { !JSON.parse(localStorage.getItem("Recent")) > 0 && <div>< br /> < br /> < br />No recently played stations </div>
+                   || !JSON.parse(localStorage.getItem("Recent")).length > 0 && <div>< br /> < br /> < br />No saved favourites </div>
+                   }
                 </div>
 
             </div>

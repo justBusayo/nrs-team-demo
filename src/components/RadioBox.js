@@ -60,23 +60,25 @@ const RadioBox = () => {
         setStationNamesArray(radioIndexedNames(stations))
         // console.log(stationNamesArray);
         let Recent = JSON.parse(localStorage.getItem("Recent")) || []
-        let RecentPkts = JSON.parse(localStorage.getItem("RecentPkts")) || []
+        let index = Recent.findIndex((test, index) => test.name == name)
+
         
         // console.log(localStorage.getItem("Favourites"));
-        if(Recent.includes(name.toLowerCase())){
-        let index = Recent.indexOf(name.toLowerCase())
-        Recent.splice(index, 1);
-        RecentPkts.splice(index, 1);
-        let newRecent = [...Recent];
-        let newRecentPkts = [...RecentPkts];
-        localStorage.setItem("Recent",JSON.stringify(newRecent))
-        localStorage.setItem("RecentPkts",JSON.stringify(newRecentPkts))
+        if(index > -1){ 
+            Recent.splice(index,1);
+            let newRecent = [obj, ...Recent];
+            localStorage.setItem("Recent",JSON.stringify(newRecent))
+
+        }
+        else if(Recent.length > 5){
+            Recent.pop()
+            let newRecent = [obj, ...Recent];
+            localStorage.setItem("Recent",JSON.stringify(newRecent))
         }
         else {
-            let newRecent = [...Recent, name.toLowerCase()];
-            let newRecentPkts = [...RecentPkts, obj];
-            localStorage.setItem("RecentPkts",JSON.stringify(newRecentPkts))
+            let newRecent = [obj, ...Recent];
             localStorage.setItem("Recent",JSON.stringify(newRecent))
+            console.log(newRecent);
         }
     }
 

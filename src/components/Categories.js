@@ -72,17 +72,32 @@ const Categories = ()=> {
           
     // clear test
         //   localStorage.removeItem("Favourites")
-        const checkFav = (name) => {
-            setStationNamesArray(radioIndexedNames(stations))
-            let Fav = JSON.stringify(localStorage.getItem("Favourites"));
-            if(Fav.includes(name.toLowerCase())){
-                console.log(true);
-                return 'liked';
-            }
-            else {
-                return '';
-            }
+      // localStorage.removeItem("Recent");
+    const setRecent = (name, obj) => {
+        setStationNamesArray(radioIndexedNames(stations))
+        // console.log(stationNamesArray);
+        let Recent = JSON.parse(localStorage.getItem("Recent")) || []
+        let index = Recent.findIndex((test, index) => test.name === name)
+
+        
+        // console.log(localStorage.getItem("Favourites"));
+        if(index > -1){ 
+            Recent.splice(index,1);
+            let newRecent = [obj, ...Recent];
+            localStorage.setItem("Recent",JSON.stringify(newRecent))
+
+        } 
+        else if(Recent.length > 5){
+            Recent.pop()
+            let newRecent = [obj, ...Recent];
+            localStorage.setItem("Recent",JSON.stringify(newRecent))
         }
+        else {
+            let newRecent = [obj, ...Recent];
+            localStorage.setItem("Recent",JSON.stringify(newRecent))
+            console.log(newRecent);
+        }
+    }
         const setFav = (name, obj) => {
             setStationNamesArray(radioIndexedNames(stations))
             // console.log(stationNamesArray);
@@ -141,6 +156,11 @@ const Categories = ()=> {
                                 src={station.urlResolved} showJumpControls={false} layout="stacked"
                                 customProgressBarSection={[]} customControlsSection={["MAIN_CONTROLS"]} //"VOLUME_CONTROLS"
                                 autoPlayAfterSrcChange={false}
+                                onPlay={
+                                    ()=> {
+                                    setRecent(station.name, station)
+
+                                    }}
                                 />
                             </div>
                             <div className="favoriteIcon">
