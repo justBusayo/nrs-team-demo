@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import defaultImage from "../images/logo.jpg"
+import defaultImage from "../images/radio.png"
 import { Container, Row, Col } from "react-bootstrap";
 import { RadioBrowserApi } from "radio-browser-api";
 import AudioPlayer from "react-h5-audio-player";
@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 
-const RadioBox = () => {
+const RecentPlayedBox = () => {
 
     const setDefaultSrc = (event) => {
         event.target.src = defaultImage;
@@ -56,29 +56,8 @@ const RadioBox = () => {
     //   localStorage.removeItem("Favourites")
     //   localStorage.removeItem("FavPkts")
 
-    const setRecent = (name, obj) => {
-        setStationNamesArray(radioIndexedNames(stations))
-        // console.log(stationNamesArray);
-        let Recent = JSON.parse(localStorage.getItem("Recent")) || []
-        let RecentPkts = JSON.parse(localStorage.getItem("RecentPkts")) || []
-        
-        // console.log(localStorage.getItem("Favourites"));
-        if(Recent.includes(name.toLowerCase())){
-        let index = Recent.indexOf(name.toLowerCase())
-        Recent.splice(index, 1);
-        RecentPkts.splice(index, 1);
-        let newRecent = [...Recent];
-        let newRecentPkts = [...RecentPkts];
-        localStorage.setItem("Recent",JSON.stringify(newRecent))
-        localStorage.setItem("RecentPkts",JSON.stringify(newRecentPkts))
-        }
-        else {
-            let newRecent = [...Recent, name.toLowerCase()];
-            let newRecentPkts = [...RecentPkts, obj];
-            localStorage.setItem("RecentPkts",JSON.stringify(newRecentPkts))
-            localStorage.setItem("Recent",JSON.stringify(newRecent))
-        }
-    }
+   
+
 
 
       const setFav = (name, obj) => {
@@ -130,7 +109,7 @@ const RadioBox = () => {
                                         src={station.urlResolved}
                                         onPlay={
                                             ()=> {
-                                            setRecent(station.name, station)
+                                                
 
                                             }
                                         }
@@ -155,4 +134,4 @@ const RadioBox = () => {
         </Container>
     )
 }
-export default RadioBox;
+export default RecentPlayedBox;

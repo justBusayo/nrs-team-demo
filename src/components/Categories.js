@@ -8,6 +8,7 @@ import { Container} from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import Menu from "./Menu";
+import SearchBoxProp from "./SearchBoxProp.js";
 
 const Categories = ()=> {
     const [stations, setStations] = useState();
@@ -53,9 +54,66 @@ const Categories = ()=> {
     const setDefaultSrc = (event) => {
         event.target.src = defaultImage;
     }
+        // fav logic
+        const radioIndexedNames = (stations) => {
+            let indexedData = [];
+            stations.forEach((station) => {
+                // let index = stationNamesArray.findIndex((obj, index) => obj.name == data.id)
+                let pushObj = {name: station.name.toLowerCase()};
+                indexedData.unshift(pushObj);
+            });
+            return indexedData;
+          }
+        
+          const [stationNamesArray, setStationNamesArray] = useState()
+    
+        //   global fav
+        const FavCheck = JSON.parse(localStorage.getItem("Favourites"));
+          
+    // clear test
+        //   localStorage.removeItem("Favourites")
+        const checkFav = (name) => {
+            setStationNamesArray(radioIndexedNames(stations))
+            let Fav = JSON.stringify(localStorage.getItem("Favourites"));
+            if(Fav.includes(name.toLowerCase())){
+                console.log(true);
+                return 'liked';
+            }
+            else {
+                return '';
+            }
+        }
+        const setFav = (name, obj) => {
+            setStationNamesArray(radioIndexedNames(stations))
+            // console.log(stationNamesArray);
+            let prevFav = JSON.parse(localStorage.getItem("Favourites")) || []
+            let prevFavPkts = JSON.parse(localStorage.getItem("FavPkts")) || []
+            
+            // console.log(localStorage.getItem("Favourites"));
+            if(prevFav.includes(name.toLowerCase())){
+            let index = prevFav.indexOf(name.toLowerCase())
+            prevFav.splice(index, 1);
+            prevFavPkts.splice(index, 1);
+            let newFav = [...prevFav];
+            let newFavPkts = [...prevFavPkts];
+            localStorage.setItem("Favourites",JSON.stringify(newFav))
+            localStorage.setItem("FavPkts",JSON.stringify(newFavPkts))
+            }
+            else {
+                let newFav = [...prevFav, name.toLowerCase()];
+                let newFavPkts = [...prevFavPkts, obj];
+                localStorage.setItem("FavPkts",JSON.stringify(newFavPkts))
+                localStorage.setItem("Favourites",JSON.stringify(newFav))
+            }
+        }
 
     return (
         <div className="radio">
+
+            <Container style={{marginTop:"1.5em"}}>
+                <SearchBoxProp stations={stations}></SearchBoxProp>
+            </Container>
+
 
             <div className="filters">
                 {filters.map((filter) => {
@@ -86,8 +144,15 @@ const Categories = ()=> {
                                 />
                             </div>
                             <div className="favoriteIcon">
-                            <FontAwesomeIcon icon={faHeart} />
-                            </div>
+                                    <FontAwesomeIcon  onClick={
+                                    ()=> {
+                                        setFav(station.name, station)
+                                    }
+                                } 
+                                        className={ ` ${FavCheck && (FavCheck.includes(station.name.toLowerCase())) ? 'liked' : '' }`}
+                            
+                                icon={faHeart} />
+                                </div>
                         </div>
                     );
                 })}

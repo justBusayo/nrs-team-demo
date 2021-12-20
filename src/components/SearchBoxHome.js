@@ -6,13 +6,13 @@ import { RadioBrowserApi } from "radio-browser-api";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 
-const SearchBox = () => {
+const SearchBox = (props) => {
 
   const setDefaultSrc = (event) => {
     event.target.src = defaultImage;
     }
 
-    const [stations, setStations] = useState([{
+    const [stations, setStations] =useState([{
       "changeId": "1b53cffc-0ade-4be0-badd-4838b5695849",
       "id": "39934407-7faa-4ba4-b88b-e000abfe4e13",
       "name": "47.5 ATOBO Radio 1",
@@ -43,14 +43,14 @@ const SearchBox = () => {
     const [searchResult, setSearchResult] = useState();
 
     useEffect(() => {
-      setupApi(25).then((data) => {
+      setupApi(5).then((data) => {
           setStations(data);
       })
   }, []);
 
   const setupApi = async (limit) => {
       const api = new RadioBrowserApi(fetch.bind(window), "Nigeria Radio");
-      console.log(api)
+      
       const stations = await api.searchStations({
           // language: "english",
           limit: limit,
@@ -78,7 +78,7 @@ const SearchBox = () => {
       if(query === "" || query === " "){} 
       else {
         stationNamesArray.forEach((obj)=>{
-            if(obj.name.includes(query)) {
+            if(obj.name.includes(query.toLowerCase())) {
                 indexReturn.unshift(obj.index)
             }
         });
@@ -108,7 +108,6 @@ const SearchBox = () => {
           aria-label="Search"
           onKeyUp={ (event) => {
               searchQuery(event.target.value);
-              console.log(event.target.value);
 
               // if(searchResult === undefined || searchResult  === null || searchResult.length <= 0 || searchResult === "") {
               //   setSearchResult([]); 
