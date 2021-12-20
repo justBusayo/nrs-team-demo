@@ -40,8 +40,8 @@ const RecentStationBox = () => {
                 alt="First slide"
                 />
                 <Carousel.Caption>
-                    <h5>MUSIC</h5>
-                
+                {/* <h5>WAZOBIA FM 91.0</h5>
+                <p>LAGOS</p> */}
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -51,7 +51,8 @@ const RecentStationBox = () => {
                 alt="First slide"
                 />
                 <Carousel.Caption>
-                <h5>AFROBEAT</h5>
+                {/* <h5>WAZOBIA FM 91.0</h5>
+                <p>LAGOS</p> */}
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -61,7 +62,8 @@ const RecentStationBox = () => {
                 alt="First slide"
                 />
                 <Carousel.Caption>
-                 <h5>BOSTNEER</h5>
+                {/* <h5>WAZOBIA FM 91.0</h5>
+                <p>LAGOS</p> */}
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -71,7 +73,8 @@ const RecentStationBox = () => {
                 alt="First slide"
                 />
                 <Carousel.Caption>
-                 <h5>CLASSICAL</h5>
+                {/* <h5>WAZOBIA FM 91.0</h5>
+                <p>LAGOS</p> */}
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -81,7 +84,8 @@ const RecentStationBox = () => {
                 alt="First slide"
                 />
                 <Carousel.Caption>
-                 {/* <h5>TALK</h5> */}
+                {/* <h5>WAZOBIA FM 91.0</h5>
+                <p>LAGOS</p> */}
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
