@@ -8,6 +8,7 @@ import Home from './components/Home.js'
 import Categories from './components/Categories';
 import Stations from './components/Stations';
 import Menu from './components/Menu';
+import Favourite from './components/Favourite';
 // import NowPlaying from './components/NowPlaying';
 
 function App() {
@@ -20,9 +21,12 @@ function App() {
         <Routes>
           {/* <Home />
           <Stations /> */}
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/stations" exact element={<Stations />}></Route>
-          <Route path="/category" exact element={<Categories />}></Route>
+          <Route  path="/" exact element={<Home />}></Route>
+          <Route  path="/stations" exact element={<Stations />}></Route>
+          <Route  path="category" exact element={<Categories />}></Route>
+          <Route  path="favourites" exact element={<Favourite />}></Route>
+
+          
           {/* <Route path="/nowplaying" exact element={<NowPlaying />}></Route> */}
 
         </Routes>

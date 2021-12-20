@@ -6,8 +6,10 @@ import { Container, Row, Col} from "react-bootstrap";
 import Menu from "./Menu.js"
 import RadioBox from "./RadioBox.js"
 import RecentStationBox from "./RecentStationBox.js"
-import SearchBox from "./SearchBox.js";
+import SearchBox from "./SearchBoxHome.js";
+import RecentPlayedBox from "./RecentPlayedBox.js";
 const Home = () => {
+
     return (
         <div>
             <Container style={{marginTop:"1.5em"}}>
@@ -36,10 +38,10 @@ const Home = () => {
             {/* for favorite Box */}
             <Container style={{marginBottom:"5em"}}>
                 <div className="RadioBoxHeader">
-                    <span className="boxTitle">MORE STATIONS</span>
+                    <span className="boxTitle">RECENTlY PLAYED STATIONS</span>
                     <span className="more">More</span>
                 </div>
-                <RadioBox></RadioBox>
+                <RecentPlayedBox></RecentPlayedBox>
             </Container>
 
             {/* Now Playing Section */}
