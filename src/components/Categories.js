@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import { RadioBrowserApi } from "radio-browser-api";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
-import defaultImage from "../images/logo.svg"
+import defaultImage from "../images/radio.png"
 import userEvent from "@testing-library/user-event"
 import { Container} from "react-bootstrap"; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
