@@ -1,6 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Open+Sans:wght@300&family=PT+Sans+Caption&family=Poppins:wght@200&family=Qahiri&family=Zen+Antique+Soft&display=swap');
-body {
-    background: #FFFFFF !important;
+
+.logo {
+    background-color: #C4C4C4;
+    width: 100%;
+    
+}
+
+.mvp {
+    .radioLeft {
+        background-color: #FFFFFF;
+        margin-bottom: 4em;
+    }
+    .radioRight {
+        background-color: #FFFFFF;
+    }
 }
 // site info
 .siteName {
@@ -82,6 +95,7 @@ body {
         font-size: 25px;
         cursor: pointer;
         color: gainsboro;
+        display: none;
     }
 
     .liked {
@@ -179,59 +193,54 @@ body {
 }
 
 // Now playing
-// .NowPlaying {
-//     width: inherit;
-//     background-color: black;
-//     justify-items: center;
-//     text-align: center;
-//     color: white;
-//     box-shadow: 0 6px 10px 0 #242323, 0 5px 10px 0 #2e2d2d;
-//     border-radius: 2%;
+.NowPlaying {
+    width: 100%;
+    background-color: #27AE61;
+    display: flex;
+    align-items: center;
 
-//     .nowDetails {
-//         margin: 0 2em 0 2em;
-//         p{
-//             font-size: 30px;
-//             font-weight: bold;
-//             font-family: cursive;
-//             margin: 0 2em .5em 2em;
-//             box-shadow: 0 1px 2px 0 green, 0 5px 10px 0 #EAEAEA;
-//         }
-//         span {
-//             font-size: 15px;
-//             color: grey;
-//             font-weight: bold;
-//             font-family: 'Courier New', Courier, monospace;
-//         }
-//     }
-//     .equalizer {
-//         width: auto;
-//         img {
-//             width: 65%;
-//             height: 40vh;
-//         }
-//     }
-//     .radioImg {
-//         img {
-//             // height: 100px;
-//             width: 35%;
-//             margin-top: 2em;
-//             border-radius: 4%;
-//         }
-//     }
-//     .nowRadio {
-//         width: 80%;
-//         margin: 4em;
-//         .player {
-//             background-color: black;
-//         }
-//     }
-// }
+    .radioImg{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-color: #FFFFFF;
+        margin: 2em;
+        img{ 
+            width: inherit;
+            height: inherit;
+            border-radius: 50%;
+        }
+    }
+    .equalizer {
+        display: none;
+    }
+    .nowDetails {
+        width: 50%;
+        color: #fff;
+        text-align: center;
+        margin-left: 2em;
+        .name{
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .region{
+            font-size: 15px;
+        }
+    }
+    .nowRadio {
+        width: 20%;
+        .player{
+            background-color: inherit;
+            margin: 3em;
+            margin-left: 5em;
+        }
+        [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+            color: #fff;
+            background: 1px solid #fff;
+        float: right;
 
-.form-control {
-    display: block;
-    width: 80% !important;
-    margin-left: 2.7em;
+        }
+    }
 }
 
 
@@ -254,4 +263,79 @@ body {
     .navbar-expand-lg .navbar-collapse {
         margin-left: 2em;
     }
+}
+
+@media only screen and (min-width: 992px) {
+    body{
+        background-color: #FFFFFF;
+    }
+    .mvp {
+        display: flex;
+        width: 100%;
+        margin: 2em 5em 3.5em 5em;
+
+        .radioLeft {
+            width: 60%;
+        }
+        .radioRight {
+            width: 30%;
+        }
+    }
+
+    // Now playing
+.NowPlaying {
+    width: 100%;
+    background-color: #27AE61;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    padding: 4em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
+
+    
+
+    .radioImg{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: #FFFFFF;
+        img{ 
+            width: inherit;
+            height: inherit;
+            border-radius: 50%;
+        }
+    }
+    .equalizer {
+        width: 50px;
+        height: 50px;
+        img {
+            width: inherit;
+            height: inherit;
+        }
+    }
+    .nowDetails {
+        color: #fff;
+        text-align: center;
+        .name{
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .region{
+            font-size: 15px;
+        }
+    }
+    .nowRadio {
+
+        .player{
+            background-color: inherit;
+            margin: 3em;
+            margin-left: 2.5em;
+        }
+        [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+            color: #fff;
+            background: 1px solid #fff;
+        }
+    }
+}
 }
